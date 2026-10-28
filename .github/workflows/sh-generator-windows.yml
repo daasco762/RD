@@ -135,6 +135,7 @@ jobs:
           repository: rustdesk/rustdesk
           ref: refs/tags/${{ env.VERSION }}
           submodules: recursive
+          token: ${{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}}
 
       - name: Checkout source code
         if: ${{ env.VERSION == 'master' }}
@@ -142,6 +143,7 @@ jobs:
         with:
           repository: rustdesk/rustdesk
           submodules: recursive
+          token: ${{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}}
           
 # === INSERT THE BUILD TOOL DEPENDENCIES HERE ===
       - name: Set up Rust
@@ -157,7 +159,7 @@ jobs:
 
       - name: Install LLVM
         run: choco install llvm -y
-      # ===============================================
+  # ===============================================
       
       - name: Set custom app version
         continue-on-error: true
@@ -491,6 +493,7 @@ jobs:
           repository: bryangerlach/rdgen
           ref: master
           path: ./temp-repo
+          token: ${{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}}
 
       - name: Move printer-adapter into place
         shell: pwsh
